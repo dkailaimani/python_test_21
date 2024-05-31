@@ -1,0 +1,29 @@
+New Vehicle Additions:
+
+Upon the introduction of a novel vehicle into the fleet, a data entry is duly incorporated into the Vehicles table. 
+At the onset, there shall be an absence of any corresponding rental agreement within the Rental_Agreements table due to the vehicle's non-utilization in rental operations. 
+The one-to-one relationship mechanism assures that each vehicle is eligible for association with a maximum of one rental agreement,
+thereby forestalling any potential discord with extant rental arrangements.
+
+Rental Agreement Updates:
+
+In the event of a vehicle being engaged for rental purposes, the initiation of a fresh rental agreement entry transpires within the Rental_Agreements table, 
+anchored by the vehicle's designated vehicle_id. Should there arise a necessity for the revision of the rental agreement terms,
+be it an adjustment in the rental tariff or an extension of the rental duration, the corresponding data entry in the Rental_Agreements table stands 
+
+amenable to subsequent modifications. The one-to-one relational model guarantees that each vehicle is exclusively affiliated with a singular rental agreement, 
+thereby obviating any ambiguity or contentions arising from the simultaneous existence of multiple rental agreements for a particular vehicle.
+
+Vehicle Availability Checks:
+
+In order to ascertain the availability status of a vehicle, the system executes a targeted query within the Rental_Agreements table, 
+specifically aimed at the stipulated vehicle_id. In the absence of a rental agreement associated with the vehicle—manifested by a NULL 
+value for the vehicle_id in Rental_Agreements—the vehicle is deemed available for rental. Conversely, the presence of an extant rental
+agreement for the vehicle serves as an indicator of its current occupancy status, rendering the vehicle unavailable for rental.
+
+Returning Rented Vehicles:
+
+Upon the conclusion of a rental period, the restoration of a rented vehicle prompts the subsequent updating
+or deletion of the corresponding rental agreement entry within the Rental_Agreements table, contingent upon 
+predefined operational protocols. In the event of the deletion of the rental agreement entry, the vehicle is 
+reinstated to an available state for rental, accompanied by requisite adjustments to the rental history records.
