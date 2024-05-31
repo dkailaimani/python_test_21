@@ -1,0 +1,22 @@
+First Normal Form (1NF):
+
+The First Normal Form (1NF) ensures that each table only contains atomic values. 
+This means that every column holds singular values without any occurrence of repeating groups or arrays.
+For instance, within the Authors table, each column (author_id, author_name, nationality, birth_year, death_year, biography, collaborator_id) 
+is designed to accommodate atomic values, that do not include attributes with multiple values.
+This structuring guarantees that each piece of data occupies its distinct cell within the table.
+
+Second Normal Form (2NF):
+
+Second Normal Form (2NF) says that every non-key attribute in a table needs to fully depend on the whole primary key. 
+Take stuff like title, isbn, genre, price, and publication_year in the Books table—they're all tied directly to the primary key (book_id). 
+This rule makes sure there aren't any halfway dependencies, where only part of the primary key decides what a non-key attribute's value should be.
+
+Third Normal Form (3NF):
+
+Now, Third Normal Form (3NF) builds on that. It's all about getting rid of transitive dependencies. 
+That means non-key attributes shouldn't lean on other non-key attributes to figure themselves out. 
+Like in the Transactions table, things like transaction_date, quantity, and total_price—they all come straight from the primary key (transaction_id),
+without relying on any other non-key attributes. Same goes for the Authors table; the biography only depends on author_id, not combniing with other non-key stuff.
+
+To sum it up, the "BookHaven" database keeps things structured by sticking to these normalization rules.
